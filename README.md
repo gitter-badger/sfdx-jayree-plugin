@@ -11,22 +11,21 @@ some sfdx commands
 [![License](https://img.shields.io/npm/l/sfdx-jayree.svg)](https://github.com/jayree/sfdx-jayree-plugin/blob/master/package.json)
 
 <!-- toc -->
-* [Usage](#usage)
-* [Commands](#commands)
+* [sfdx-jayree](#sfdx-jayree)
 <!-- tocstop -->
 
 ## Usage
 
 <!-- usage -->
 ```sh-session
-$ sfdx plugins:install sfdx-jayree
-$ sfdx jayree:COMMAND
+$ npm install -g sfdx-jayree
+$ sfdx COMMAND
 running command...
-$ sfdx plugins
-sfdx-jayree 1.8.1
-$ sfdx help jayree:COMMAND
+$ sfdx (-v|--version|version)
+sfdx-jayree/1.8.1 darwin-x64 node-v12.13.0
+$ sfdx --help [COMMAND]
 USAGE
-  $ sfdx jayree:COMMAND
+  $ sfdx COMMAND
 ...
 ```
 <!-- usagestop -->
@@ -36,6 +35,7 @@ USAGE
 <!-- commands -->
 * [`sfdx jayree:automation:changeset:deploy [-r <string> -l <string>] [-c] [--nodialog -s <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-jayreeautomationchangesetdeploy--r-string--l-string--c---nodialog--s-string--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
 * [`sfdx jayree:automation:changeset:list [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-jayreeautomationchangesetlist--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
+* [`sfdx jayree:automation:changeset:retrieve [--nodialog -s <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-jayreeautomationchangesetretrieve---nodialog--s-string--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
 * [`sfdx jayree:automation:ltngsync:status -o <string> [-s] [-w <integer>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-jayreeautomationltngsyncstatus--o-string--s--w-integer--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
 * [`sfdx jayree:automation:statecountry:import --countrycode <string> --category <string> --language <string> [--uselocalvariant] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-jayreeautomationstatecountryimport---countrycode-string---category-string---language-string---uselocalvariant--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
 * [`sfdx jayree:flowtestcoverage [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-jayreeflowtestcoverage--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
@@ -51,7 +51,7 @@ USAGE
 * [`sfdx jayree:source:retrieve:all [-u <string>] [--apiversion <string>] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-jayreesourceretrieveall--u-string---apiversion-string---verbose---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
 * [`sfdx jayree:source:retrieve:full [-m <array>] [-u <string>] [--apiversion <string>] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-jayreesourceretrievefull--m-array--u-string---apiversion-string---verbose---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
 
-### `sfdx jayree:automation:changeset:deploy [-r <string> -l <string>] [-c] [--nodialog -s <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfdx jayree:automation:changeset:deploy [-r <string> -l <string>] [-c] [--nodialog -s <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 deploy incomming change set to an org (beta)
 
@@ -101,9 +101,9 @@ EXAMPLES
   ❯ ChangeSet1
 ```
 
-_See code: [src/commands/jayree/automation/changeset/deploy.ts](https://github.com/jayree/sfdx-jayree-plugin/blob/v1.8.1/src/commands/jayree/automation/changeset/deploy.ts)_
+_See code: [src/src/commands/jayree/automation/changeset/deploy.ts](https://github.com/jayree/sfdx-jayree-plugin/blob/v1.8.1/src/src/commands/jayree/automation/changeset/deploy.ts)_
 
-### `sfdx jayree:automation:changeset:list [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfdx jayree:automation:changeset:list [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 list incomming change sets of an org (beta)
 
@@ -125,9 +125,51 @@ OPTIONS
                                                                                     this command invocation
 ```
 
-_See code: [src/commands/jayree/automation/changeset/list.ts](https://github.com/jayree/sfdx-jayree-plugin/blob/v1.8.1/src/commands/jayree/automation/changeset/list.ts)_
+_See code: [src/src/commands/jayree/automation/changeset/list.ts](https://github.com/jayree/sfdx-jayree-plugin/blob/v1.8.1/src/src/commands/jayree/automation/changeset/list.ts)_
 
-### `sfdx jayree:automation:ltngsync:status -o <string> [-s] [-w <integer>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfdx jayree:automation:changeset:retrieve [--nodialog -s <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+
+deploy incomming change set to an org (beta)
+
+```
+USAGE
+  $ sfdx jayree:automation:changeset:retrieve [--nodialog -s <string>] [-u <string>] [--apiversion <string>] [--json] 
+  [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+
+OPTIONS
+  -s, --changeset=changeset                                                         name of changeset to deploy
+
+  -u, --targetusername=targetusername                                               username or alias for the target
+                                                                                    org; overrides default target org
+
+  --apiversion=apiversion                                                           override the api version used for
+                                                                                    api requests made by this command
+
+  --json                                                                            format output as json
+
+  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: warn] logging level for
+                                                                                    this command invocation
+
+  --nodialog                                                                        don't show the dialog wizard
+
+EXAMPLES
+  $ sfdx jayree:automation:changeset:deploy -s ChangeSet -l RunLocalTests --nodialog
+  Deploying Change Set 'ChangeSet'...
+
+  === Status
+  Status: Pending
+  jobid:  0Xxx100000xx1x1
+
+  $ sfdx jayree:automation:changeset:deploy
+  ? Change Sets Awaiting Deployment (Use arrow keys)
+    ChangeSet3
+    ChangeSet2
+  ❯ ChangeSet1
+```
+
+_See code: [src/src/commands/jayree/automation/changeset/retrieve.ts](https://github.com/jayree/sfdx-jayree-plugin/blob/v1.8.1/src/src/commands/jayree/automation/changeset/retrieve.ts)_
+
+## `sfdx jayree:automation:ltngsync:status -o <string> [-s] [-w <integer>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 check the Lightning Sync User Sync Status and reset sync if needed (beta)
 
@@ -166,9 +208,9 @@ EXAMPLE
        userContacts/userEvents: Exchange to Salesforce sync status... Initial sync completed/Initial sync completed
 ```
 
-_See code: [src/commands/jayree/automation/ltngsync/status.ts](https://github.com/jayree/sfdx-jayree-plugin/blob/v1.8.1/src/commands/jayree/automation/ltngsync/status.ts)_
+_See code: [src/src/commands/jayree/automation/ltngsync/status.ts](https://github.com/jayree/sfdx-jayree-plugin/blob/v1.8.1/src/src/commands/jayree/automation/ltngsync/status.ts)_
 
-### `sfdx jayree:automation:statecountry:import --countrycode <string> --category <string> --language <string> [--uselocalvariant] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfdx jayree:automation:statecountry:import --countrycode <string> --category <string> --language <string> [--uselocalvariant] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 import (create/update) State/Country Picklists (beta)
 
@@ -203,9 +245,9 @@ ALIASES
   $ sfdx jayree:automation:statecountry:update
 ```
 
-_See code: [src/commands/jayree/automation/statecountry/import.ts](https://github.com/jayree/sfdx-jayree-plugin/blob/v1.8.1/src/commands/jayree/automation/statecountry/import.ts)_
+_See code: [src/src/commands/jayree/automation/statecountry/import.ts](https://github.com/jayree/sfdx-jayree-plugin/blob/v1.8.1/src/src/commands/jayree/automation/statecountry/import.ts)_
 
-### `sfdx jayree:flowtestcoverage [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfdx jayree:flowtestcoverage [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 check the flow test coverage of an org
 
@@ -233,9 +275,9 @@ EXAMPLE
   ...
 ```
 
-_See code: [src/commands/jayree/flowtestcoverage.ts](https://github.com/jayree/sfdx-jayree-plugin/blob/v1.8.1/src/commands/jayree/flowtestcoverage.ts)_
+_See code: [src/src/commands/jayree/flowtestcoverage.ts](https://github.com/jayree/sfdx-jayree-plugin/blob/v1.8.1/src/src/commands/jayree/flowtestcoverage.ts)_
 
-### `sfdx jayree:org:open [-b <string>] [-p <string>] [-r] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfdx jayree:org:open [-b <string>] [-p <string>] [-r] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 open an org in your preferred browser
 
@@ -272,9 +314,9 @@ EXAMPLE
   $ sfdx jayree:org:open -u me@my.org
 ```
 
-_See code: [src/commands/jayree/org/open.ts](https://github.com/jayree/sfdx-jayree-plugin/blob/v1.8.1/src/commands/jayree/org/open.ts)_
+_See code: [src/src/commands/jayree/org/open.ts](https://github.com/jayree/sfdx-jayree-plugin/blob/v1.8.1/src/src/commands/jayree/org/open.ts)_
 
-### `sfdx jayree:packagedescription:create (-d <string> -f <string>) [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfdx jayree:packagedescription:create (-d <string> -f <string>) [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 creates an empty package with the description
 
@@ -295,9 +337,9 @@ EXAMPLE
   $ sfdx jayree:packagedescription:create --file FILENAME --description 'DESCRIPTION'
 ```
 
-_See code: [src/commands/jayree/packagedescription/create.ts](https://github.com/jayree/sfdx-jayree-plugin/blob/v1.8.1/src/commands/jayree/packagedescription/create.ts)_
+_See code: [src/src/commands/jayree/packagedescription/create.ts](https://github.com/jayree/sfdx-jayree-plugin/blob/v1.8.1/src/src/commands/jayree/packagedescription/create.ts)_
 
-### `sfdx jayree:packagedescription:get -f <string> [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfdx jayree:packagedescription:get -f <string> [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 get the description within a package
 
@@ -318,9 +360,9 @@ EXAMPLE
        Description of Package FILENAME
 ```
 
-_See code: [src/commands/jayree/packagedescription/get.ts](https://github.com/jayree/sfdx-jayree-plugin/blob/v1.8.1/src/commands/jayree/packagedescription/get.ts)_
+_See code: [src/src/commands/jayree/packagedescription/get.ts](https://github.com/jayree/sfdx-jayree-plugin/blob/v1.8.1/src/src/commands/jayree/packagedescription/get.ts)_
 
-### `sfdx jayree:packagedescription:remove -f <string> [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfdx jayree:packagedescription:remove -f <string> [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 remove the description within a package
 
@@ -340,9 +382,9 @@ EXAMPLE
   $ sfdx jayree:packagedescription:remove --file FILENAME
 ```
 
-_See code: [src/commands/jayree/packagedescription/remove.ts](https://github.com/jayree/sfdx-jayree-plugin/blob/v1.8.1/src/commands/jayree/packagedescription/remove.ts)_
+_See code: [src/src/commands/jayree/packagedescription/remove.ts](https://github.com/jayree/sfdx-jayree-plugin/blob/v1.8.1/src/src/commands/jayree/packagedescription/remove.ts)_
 
-### `sfdx jayree:packagedescription:set (-d <string> -f <string>) [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfdx jayree:packagedescription:set (-d <string> -f <string>) [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 set the description within a package
 
@@ -363,9 +405,9 @@ EXAMPLE
   $ sfdx jayree:packagedescription:set --file FILENAME --description 'NEW DESCRIPTION'
 ```
 
-_See code: [src/commands/jayree/packagedescription/set.ts](https://github.com/jayree/sfdx-jayree-plugin/blob/v1.8.1/src/commands/jayree/packagedescription/set.ts)_
+_See code: [src/src/commands/jayree/packagedescription/set.ts](https://github.com/jayree/sfdx-jayree-plugin/blob/v1.8.1/src/src/commands/jayree/packagedescription/set.ts)_
 
-### `sfdx jayree:packagexml [--configfile <string>] [-q <string>] [-c] [-w] [-f <string>] [-x] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfdx jayree:packagexml [--configfile <string>] [-q <string>] [-c] [-w] [-f <string>] [-x] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 generate a complete package xml form the specified org
 
@@ -407,9 +449,9 @@ EXAMPLE
        <Package xmlns="http://soap.sforce.com/2006/04/metadata">...</Package>
 ```
 
-_See code: [src/commands/jayree/packagexml.ts](https://github.com/jayree/sfdx-jayree-plugin/blob/v1.8.1/src/commands/jayree/packagexml.ts)_
+_See code: [src/src/commands/jayree/packagexml.ts](https://github.com/jayree/sfdx-jayree-plugin/blob/v1.8.1/src/src/commands/jayree/packagexml.ts)_
 
-### `sfdx jayree:scratchorg:revision [-b | -r] [-v <integer> -s] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfdx jayree:scratchorg:revision [-b | -r] [-v <integer> -s] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 list changes in a scratch org by remote RevisionNum and set local maxrevision
 
@@ -444,9 +486,9 @@ EXAMPLE
   $ sfdx jayree:scratchorgrevision -u MyTestOrg1 -w
 ```
 
-_See code: [src/commands/jayree/scratchorg/revision.ts](https://github.com/jayree/sfdx-jayree-plugin/blob/v1.8.1/src/commands/jayree/scratchorg/revision.ts)_
+_See code: [src/src/commands/jayree/scratchorg/revision.ts](https://github.com/jayree/sfdx-jayree-plugin/blob/v1.8.1/src/src/commands/jayree/scratchorg/revision.ts)_
 
-### `sfdx jayree:scratchorg:settings [-w] [-f <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfdx jayree:scratchorg:settings [-w] [-f <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 write the current settings from an Org to a scratch org def file
 
@@ -479,9 +521,9 @@ EXAMPLE
   $ sfdx jayree:scratchorgsettings -u MyTestOrg1 -w
 ```
 
-_See code: [src/commands/jayree/scratchorg/settings.ts](https://github.com/jayree/sfdx-jayree-plugin/blob/v1.8.1/src/commands/jayree/scratchorg/settings.ts)_
+_See code: [src/src/commands/jayree/scratchorg/settings.ts](https://github.com/jayree/sfdx-jayree-plugin/blob/v1.8.1/src/src/commands/jayree/scratchorg/settings.ts)_
 
-### `sfdx jayree:source:fix [-t <array>] [-u <string>] [--apiversion <string>] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfdx jayree:source:fix [-t <array>] [-u <string>] [--apiversion <string>] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 fix local source files
 
@@ -511,9 +553,9 @@ DESCRIPTION
   (examples will follow)
 ```
 
-_See code: [src/commands/jayree/source/fix.ts](https://github.com/jayree/sfdx-jayree-plugin/blob/v1.8.1/src/commands/jayree/source/fix.ts)_
+_See code: [src/src/commands/jayree/source/fix.ts](https://github.com/jayree/sfdx-jayree-plugin/blob/v1.8.1/src/src/commands/jayree/source/fix.ts)_
 
-### `sfdx jayree:source:retrieve:all [-u <string>] [--apiversion <string>] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfdx jayree:source:retrieve:all [-u <string>] [--apiversion <string>] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 retrieve all sources from an org
 
@@ -540,9 +582,9 @@ DESCRIPTION
   Retrieves all metadata in source format from an org to your local Salesforce DX project.
 ```
 
-_See code: [src/commands/jayree/source/retrieve/all.ts](https://github.com/jayree/sfdx-jayree-plugin/blob/v1.8.1/src/commands/jayree/source/retrieve/all.ts)_
+_See code: [src/src/commands/jayree/source/retrieve/all.ts](https://github.com/jayree/sfdx-jayree-plugin/blob/v1.8.1/src/src/commands/jayree/source/retrieve/all.ts)_
 
-### `sfdx jayree:source:retrieve:full [-m <array>] [-u <string>] [--apiversion <string>] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfdx jayree:source:retrieve:full [-m <array>] [-u <string>] [--apiversion <string>] [--verbose] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 retrieve full sources from an org
 
@@ -575,5 +617,5 @@ DESCRIPTION
   DX project.
 ```
 
-_See code: [src/commands/jayree/source/retrieve/full.ts](https://github.com/jayree/sfdx-jayree-plugin/blob/v1.8.1/src/commands/jayree/source/retrieve/full.ts)_
+_See code: [src/src/commands/jayree/source/retrieve/full.ts](https://github.com/jayree/sfdx-jayree-plugin/blob/v1.8.1/src/src/commands/jayree/source/retrieve/full.ts)_
 <!-- commandsstop -->
